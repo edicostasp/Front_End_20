@@ -1,0 +1,75 @@
+.container{
+    display:grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 250px 600px;
+    /* grid-template-columns: repeat(3, 1fr); */
+    /* Initially each element has its own row for small screens */
+    grid-template-areas: 
+    "hd"
+    "sd"
+    "main"
+    "ft";
+    border: 3px solid rgba(36, 95, 75, 0.075); 
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  }
+  /* add css for nested grid here */
+  #nestedGrid{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    border: 3px solid blue;
+    justify-content: space-evenly; 
+    }
+.nestedGrid > *{
+    border: 2px solid aquamarine;
+}
+
+.quadro{
+    width: 450px;
+    height: 200px;
+    background: white;
+    border: 1px solid aquamarine;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    justify-content: space-evenly; 
+}
+#one{
+    background-image:url("images/icon3.jpg");
+    background-size: contain;
+    /*background: lightblue;*/
+}
+
+    .box{
+        border: 1px solid black;
+        background: white;
+        }
+      .header{
+        /* row start/column start/ row end/ column end */
+        grid-area:hd;
+        background-image:url("images/icon3.jpg");
+
+      }
+      .footer{
+        grid-area: ft;  
+      }
+      .sidebar{
+        grid-area: sd;
+      }
+      .content{
+        grid-area: main;
+
+      }
+  /* If Screen Is Wide Enough */
+  @media(min-width:900px) {
+  .container{
+        display:grid;
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows: 250px 600px;
+        grid-template-areas: 
+        "hd hd hd hd hd hd hd hd"
+        "sd sd main main main main main main"
+        "ft ft ft ft ft ft ft ft";
+        /*border: 2px solid red;*/
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+
+    }
+  }
